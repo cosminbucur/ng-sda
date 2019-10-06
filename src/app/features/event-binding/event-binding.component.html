@@ -1,0 +1,17 @@
+<mat-card>
+
+  <h2> Event binding example</h2>
+
+  <!--Event Binding-->
+  <button mat-raised-button color="primary" (click)="onSave($event)">Save</button>
+
+  <p>button was clicked {{ clickCount }} times</p>
+
+  <h2>Event Bubbling Example</h2>
+
+  <!-- Event Bubbling -->
+  <div (click)="onDivClick()">
+    <button mat-raised-button color="primary" (click)="onSave($event)">Save</button> <!-- Event Binding -->
+  </div>
+
+</mat-card>

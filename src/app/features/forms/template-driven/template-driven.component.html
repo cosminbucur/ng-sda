@@ -1,0 +1,89 @@
+<!-- 
+  the istance of ngForm is hidden. it can be exposed with a local template
+  reference variable
+  ngForm directive creates a top level FormGroup
+  we need to explicitly register each template control with the ngForm directive
+  using NgModel directive and name attribute
+ -->
+<form novalidate #f="ngForm" (ngSubmit)="onSubmit()">
+  <!-- directive to create a model group -->
+  <fieldset ngModelGroup="name">
+    <div class="form-group">
+      <label>First Name</label>
+      <!-- directive to store firstName in FormGroup as a new FormControl -->
+      <input type="text" class="form-control" name="firstName" ngModel>
+    </div>
+
+    <div class="form-group">
+      <label>Last Name</label>
+      <input type="text" class="form-control" name="lastName" ngModel>
+    </div>
+  </fieldset>
+
+  <div class="form-group">
+    <label>Email</label>
+    <!-- two way binding with the model -->
+    <!-- #email="ngModel" get access to instance of model
+        using a local template reference variable -->
+    <input type="email" class="form-control" name="email" [(ngModel)]="model.email" #email="ngModel" required
+      pattern="[^ @]*@[^ @]*">
+    <div [ngClass]="{ 'invalid-feedback': f.form.controls.email?.invalid && f.form.controls.email?.dirty }">
+      No, you missed this one.</div>
+    <div [ngClass]="{ 'valid-feedback': email.valid && email.dirty }">
+      Success! You've done it.</div>
+    <div class="form-control-feedback" *ngIf="email.errors && (email.dirty || email.touched)">
+      <p *ngIf="email.errors.required">Email is required</p>
+      <p *ngIf="email.errors.minlength">Email must contain at least the @ character</p>
+    </div>
+  </div>
+
+
+  <div class="form-group">
+    <label>Password</label>
+    <input type="password" class="form-control" name="password" [(ngModel)]="model.password" required minlength="8">
+  </div>
+
+  <div class="form-group">
+    <label>Language</label>
+    <select class="form-control" name="language" ngModel>
+      <option value="">Please select a language</option>
+      <option *ngFor="let lang of langs" [value]="lang">
+        {{lang}}
+      </option>
+    </select>
+  </div>
+
+  <!-- disabled if form invalid -->
+  <button type="submit" class="btn btn-primary" [disabled]="f.invalid">Submit</button>
+</form>
+
+<mat-card>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm">Debug
+        <pre>{{f.value | json}}</pre>
+      </div>
+      <div class="col-sm">Form control state - for email input
+
+        <!-- ? (elvis operator) call proeprty on the right if left is not null -->
+        <pre>Dirty? {{ f.form.controls.email?.dirty }}</pre>
+        <pre>Pristine? {{ f.form.controls.email?.pristine }}</pre>
+        <pre>Touched? {{ f.form.controls.email?.touched }}</pre>
+        <pre>Valid? {{ f.form.controls.email?.valid }}</pre>
+        <pre>Invalid? {{ f.form.controls.email?.invalid }}</pre>
+
+        <!-- short version -->
+        <pre>Invalid? {{ f.controls.email?.invalid }}</pre>
+
+        <!-- nested control -->
+        <pre>First name valid? {{ f.controls.name.firstName?.valid }}</pre>
+
+        <!-- ngForm directive makes top level FormGroups 
+            available via f.form  -->
+        <pre>Password error required? {{ f.form.controls.password?.errors.required }}</pre>
+        <pre>Password valid? {{ f.form.controls.password?.valid }}</pre>
+
+      </div>
+    </div>
+  </div>
+</mat-card>

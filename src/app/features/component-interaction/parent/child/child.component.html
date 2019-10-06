@@ -1,0 +1,8 @@
+<mat-card class="child">
+  <mat-card-title>In child component</mat-card-title>
+
+  <p>parent said: "{{ childInput }}"</p>
+  <p>child reply: {{ childReply }}</p>
+
+  <button mat-raised-button color="primary" (click)="childEmitOutput()">Emit event</button>
+</mat-card>
