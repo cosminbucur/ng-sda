@@ -10,7 +10,7 @@ import { Subscription } from 'rxjs/internal/Subscription';
 })
 export class HomeComponent implements OnInit, OnDestroy {
 
-  title = 'ng-group10';
+  title = 'ng-sda';
 
   public users: User[];
 
