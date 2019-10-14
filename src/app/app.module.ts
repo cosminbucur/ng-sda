@@ -18,6 +18,9 @@ import { CoreModule } from './core/core.module';
 import { ComponentInteractionComponent } from './features/component-interaction/component-interaction.component';
 import { ParentComponent } from './features/component-interaction/parent/parent.component';
 import { ChildComponent } from './features/component-interaction/parent/child/child.component';
+import { ObservablesComponent } from './features/observables/observables.component';
+import { HttpCoreComponent } from './features/http/http-core/http-core.component';
+import { CrudModule } from './features/crud/crud.module';
 
 @NgModule({
   declarations: [
@@ -34,9 +37,11 @@ import { ChildComponent } from './features/component-interaction/parent/child/ch
     NotificationsComponent,
     ComponentInteractionComponent,
     ParentComponent,
-    ChildComponent
+    ChildComponent,
+    ObservablesComponent,
+    HttpCoreComponent
   ],
-  imports: [CoreModule, SharedModule, appRouting],
+  imports: [CoreModule, SharedModule, CrudModule, appRouting],
   providers: [],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]

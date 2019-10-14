@@ -1,0 +1,22 @@
+<div>
+    <div>
+      <button mat-raised-button color="primary" (click)="doGET()">GET</button>
+      <button mat-raised-button color="primary" (click)="doPOST()">POST</button>
+      <button mat-raised-button color="primary" (click)="doPUT()">PUT</button>
+      <button mat-raised-button color="primary" (click)="doDELETE()">DELETE</button>
+    </div>
+  </div>
+  
+  <div>
+    <div>
+      <button mat-raised-button color="secondary" (click)="doGETAsPromise()">As Promise</button>
+      <button mat-raised-button color="secondary" (click)="doGETAsPromiseError()">Error as Promise</button>
+      <button mat-raised-button color="secondary" (click)="doGETAsObservableError()">Error as Observable</button>
+    </div>
+  </div>
+  
+  <div>
+    <div>
+      <button mat-raised-button color="accent" (click)="doGETWithHeaders()">With Headers</button>
+    </div>
+  </div>

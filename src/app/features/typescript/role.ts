@@ -1,5 +1,4 @@
-// enum
-enum Role {
+export enum Role {
   employee,
   manager,
   admin

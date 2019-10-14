@@ -1,9 +1,21 @@
-class DemoStrings {
-  public interpolation(): void {
+export class DemoStrings {
+
+  public templateStrings(): void {
+    const multiLineString = `
+      this
+      is
+      a
+      multi-line
+      string
+    `;
+    console.log(multiLineString);
+  }
+
+  public variableSubstitution(): void {
     const firstName = 'lebron';
     const lastName = 'james';
 
-    const greeting = `This is ${firstName} ${lastName}`;
-    console.log(greeting);
+    const fullName = `This is ${firstName} ${lastName}`;
+    console.log(fullName);
   }
 }

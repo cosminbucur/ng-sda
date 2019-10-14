@@ -42,12 +42,12 @@ export class UsersService {
       .toPromise();
   }
 
-  // TODO: fix this
   /**
    * Create a new user
    */
-  create(): Promise<User> {
-    return this.http.post<User>(this.USER_API, null).toPromise();
+  create(user: User): Promise<User> {
+    const userDto = this.toRequestDto(user);
+    return this.http.post<User>(this.USER_API, userDto).toPromise();
   }
 
   /**
@@ -75,8 +75,7 @@ export class UsersService {
       email: dto.email,
       registerDate: dto.registerDate,
       role: dto.role,
-      isActive: dto.isActive,
-      photos: dto.photos
+      isActive: dto.isActive
     };
   }
 
@@ -88,8 +87,7 @@ export class UsersService {
       email: user.email,
       registerDate: user.registerDate,
       role: user.role,
-      isActive: user.isActive,
-      photos: user.photos
+      isActive: user.isActive
     };
   }
 

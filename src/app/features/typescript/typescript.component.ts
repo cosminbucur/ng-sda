@@ -1,4 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { DemoObjectDestructuring } from './object-destructuring';
+import { DemoFatArrow } from './fat-arrow';
+import { Component } from '@angular/core';
+import { DemoThis } from './this';
+import { DemoVariables } from './variables';
+import { DemoIteration } from './iteration';
+import { DemoMaps } from './maps';
+import { DemoSets } from './sets';
+import { DemoPromises } from './promises';
 
 @Component({
   selector: 'app-typescript',
@@ -6,57 +14,56 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./typescript.component.scss']
 })
 export class TypescriptComponent {
-  // string
-  name = 'Paul';
-
-  // number
-  age = 36;
-
-  // boolean
-  married = true;
-
-  // array
-  itCompanies: Array<string> = ['IBM', 'Microsoft', 'Google'];
-  brands: string[] = ['Apple', 'Dell', 'HP'];
 
   constructor() {
-    this.iterateEnum();
+    // const demoVariables: DemoVariables = new DemoVariables();
+    // demoVariables.declareVariables();
 
-    this.iterateEnumKeys();
+    // const demoSrings: DemoStrings = new DemoStrings();
+    // demoSrings.templateStrings();
+    // demoSrings.variableSubstitution();
 
-    this.getKeysOfStringEnum();
+    // const demoConst: DemoConst = new DemoConst();
+    // demoConst.mutateObject();
+    // demoConst.makeObjectImmutable();
 
-    this.getValuesOfStringEnum();
-  }
+    // const demoFatArrow: DemoFatArrow = new DemoFatArrow();
+    // demoFatArrow.testFatArrow();
+    // demoFatArrow.testFatArrowWithArguments();
 
-  // enums
-  public iterateEnum(): void {
-    console.log('iterate enum: ');
+    // const demoThis: DemoThis = new DemoThis();
+    // demoThis.testThis();
 
-    for (const role in Role) {
-      if (isNaN(Number(role))) {
-        console.log(role);
-      }
-    }
-  }
+    // const demoObjectDestructuring: DemoObjectDestructuring = new DemoObjectDestructuring();
+    // demoObjectDestructuring.objectDestructuring();
+    // demoObjectDestructuring.arrayDestructuring();
+    // demoObjectDestructuring.functionWithMultipleParameters();
+    // demoObjectDestructuring.destructuredFunctionWithParameters();
+    // demoObjectDestructuring.destructuredFunctionWithDefaultParameters();
 
-  public iterateEnumKeys() {
-    console.log('iterate enum keys: ');
+    // const demoIteration: DemoIteration = new DemoIteration();
+    // demoIteration.testFor();
+    // demoIteration.testForInObject();
+    // demoIteration.testForInArray();
+    // demoIteration.testForOf();
 
-    Object.keys(Role)
-      .filter(key => !isNaN(Number(Role[key])))
-      .forEach(key => console.log(Role[key]));
-  }
+    // const demoMaps: DemoMaps = new DemoMaps();
+    // demoMaps.testMap();
 
-  public getKeysOfStringEnum(): void {
-    console.log('iterate keys of string enum: ');
+    // const demoSets: DemoSets = new DemoSets();
+    // demoSets.testSets();
 
-    Object.keys(Signal).forEach(key => console.log(key));
-  }
+    // const demoEnums: DemoEnums = new DemoEnums();
+    // demoEnums.iterateEnum();
+    // demoEnums.iterateEnumKeys();
+    // demoEnums.getKeysOfStringEnum();
+    // demoEnums.getValuesOfStringEnum();
 
-  public getValuesOfStringEnum(): void {
-    console.log('iterate values of string enum: ');
-
-    Object.keys(Signal).map(key => console.log(Signal[key]));
+    const demoPromises: DemoPromises = new DemoPromises();
+    demoPromises.testSuccessPromise();
+    demoPromises.testErrorPromise();
+    demoPromises.promiseChainability();
+    demoPromises.promiseErrorHandling();
+    demoPromises.promiseInTypescript();
   }
 }

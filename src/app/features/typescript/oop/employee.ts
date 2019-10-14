@@ -1,5 +1,5 @@
 // class
-class Person {
+export class Employee {
   firstName: string;
   lastName: string;
   private age: number;
@@ -8,7 +8,7 @@ class Person {
     this.firstName = firstName;
     this.lastName = lastName;
     this.age = age;
-    console.log(`Person ${this.firstName} ${this.lastName} created.`);
+    console.log(`Student ${this.firstName} ${this.lastName} created.`);
   }
 
   // method definition

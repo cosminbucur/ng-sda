@@ -7,5 +7,4 @@ export interface User {
   role: UserRole;
   registerDate: Date;
   isActive?: boolean;
-  photos?: string[];
 }
