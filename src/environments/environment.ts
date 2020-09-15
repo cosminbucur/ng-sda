@@ -6,7 +6,7 @@ import { EnvironmentMap } from './environment.map';
 
 export const environment: EnvironmentMap = {
   production: false,
-  serverApiUrl: 'http://localhost:3000'
+  serverApiUrl: 'http://localhost:3001'
 };
 
 /*
