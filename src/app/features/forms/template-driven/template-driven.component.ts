@@ -13,7 +13,7 @@ export class TemplateDrivenComponent implements OnInit {
 
   model: Signup = new Signup();   // container for domain model
 
-  @ViewChild('#f', {static: false}) form: any;    // reference to the ngForm instance
+  @ViewChild('#f') form: any;    // reference to the ngForm instance
 
   langs: string[] = [
     'English',

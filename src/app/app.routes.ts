@@ -15,6 +15,7 @@ import { appRoutesNames } from './app.routes.names';
 import { TemplateDrivenComponent } from './features/forms/template-driven/template-driven.component';
 import { ModelDrivenComponent } from './features/forms/model-driven/model-driven.component';
 import { ListUserComponent } from './features/crud/list-user/list-user.component';
+import { AppModule } from './app.module';
 
 export const appRoutes: Routes = [
   { path: appRoutesNames.HOME, component: HomeComponent },
@@ -34,4 +35,4 @@ export const appRoutes: Routes = [
   { path: '', pathMatch: 'full', component: AppComponent }
 ];
 
-export const appRouting: ModuleWithProviders = RouterModule.forRoot(appRoutes);
+export const appRouting: ModuleWithProviders<AppModule> = RouterModule.forRoot(appRoutes);
