@@ -6,12 +6,12 @@ describe('DataBindingComponent', () => {
   let component: DataBindingComponent;
   let fixture: ComponentFixture<DataBindingComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(async () => {
     TestBed.configureTestingModule({
       declarations: [ DataBindingComponent ]
     })
     .compileComponents();
-  }));
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(DataBindingComponent);

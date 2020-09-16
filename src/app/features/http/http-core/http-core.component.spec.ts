@@ -6,12 +6,12 @@ describe('HttpCoreComponent', () => {
   let component: HttpCoreComponent;
   let fixture: ComponentFixture<HttpCoreComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(async () => {
     TestBed.configureTestingModule({
       declarations: [ HttpCoreComponent ]
     })
     .compileComponents();
-  }));
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(HttpCoreComponent);

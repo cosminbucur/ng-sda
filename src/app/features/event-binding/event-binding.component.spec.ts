@@ -6,12 +6,12 @@ describe('EventBindingComponent', () => {
   let component: EventBindingComponent;
   let fixture: ComponentFixture<EventBindingComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(async () => {
     TestBed.configureTestingModule({
       declarations: [ EventBindingComponent ]
     })
     .compileComponents();
-  }));
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(EventBindingComponent);

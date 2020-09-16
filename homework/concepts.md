@@ -369,7 +369,7 @@ __objective__: display notifications to user
 
   - start mock server
 
-  > `json-server --watch mocks\mocks.json`
+  > `json-server --watch mocks/mocks.json`
 
   - check server (in postman / browser)
   <http://localhost:3000>
@@ -401,7 +401,7 @@ __objective__: enable routing in the application
       { path: '', pathMatch: 'full', component: AppComponent }
   ];
 
-  export const appRouting: ModuleWithProviders = RouterModule.forRoot(appRoutes);
+  export const appRouting: ModuleWithProviders<Root> = RouterModule.forRoot(appRoutes);
   ```
 
 __objective__: extract route names in a file for easy rename
@@ -442,6 +442,8 @@ __objective__: learn to add a css framework to the project
 1. add material to project
    
   > `npm install @angular/material
+
+  > ng add @angular/material
 
 2. setup a theme
 
@@ -492,16 +494,7 @@ __objective__: learn to add a css framework to the project
 
   search icons at <https://material.io/resources/icons/?icon=info&style=baseline>
 
-5. enable animations
-
-  > `npm install hammerjs`
-  > in *polyfills.ts* add
-  
-  ```typescript
-  import 'hammerjs'
-  ```
-
-6. UX
+5. UX
 
 __objective__: learn material design concepts
   
@@ -516,7 +509,11 @@ __objective__: learn material design concepts
 __objective__: putting it all together
 
   > cd src/app/features
+  
   > `ng g c crud`
+
   > cd src/app/features
+
   > `ng g c list-user`
+
   > `ng g c add-user`

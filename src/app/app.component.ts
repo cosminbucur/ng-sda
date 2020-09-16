@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
 
+  public title = 'ng-sda';
   public appRoutesNames;
 
   constructor() {

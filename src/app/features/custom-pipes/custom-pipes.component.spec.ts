@@ -5,12 +5,12 @@ describe('CustomPipesComponent', () => {
   let component: CustomPipesComponent;
   let fixture: ComponentFixture<CustomPipesComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(async () => {
     TestBed.configureTestingModule({
       declarations: [ CustomPipesComponent ]
     })
     .compileComponents();
-  }));
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(CustomPipesComponent);

@@ -6,12 +6,12 @@ describe('TypescriptComponent', () => {
   let component: TypescriptComponent;
   let fixture: ComponentFixture<TypescriptComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(async () => {
     TestBed.configureTestingModule({
       declarations: [ TypescriptComponent ]
     })
     .compileComponents();
-  }));
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(TypescriptComponent);

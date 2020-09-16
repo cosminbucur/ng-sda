@@ -6,12 +6,12 @@ describe('ModelDrivenComponent', () => {
   let component: ModelDrivenComponent;
   let fixture: ComponentFixture<ModelDrivenComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(async () => {
     TestBed.configureTestingModule({
       declarations: [ ModelDrivenComponent ]
     })
     .compileComponents();
-  }));
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(ModelDrivenComponent);

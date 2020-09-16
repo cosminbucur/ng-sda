@@ -6,12 +6,12 @@ describe('TemplateDrivenComponent', () => {
   let component: TemplateDrivenComponent;
   let fixture: ComponentFixture<TemplateDrivenComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(async () => {
     TestBed.configureTestingModule({
       declarations: [ TemplateDrivenComponent ]
     })
     .compileComponents();
-  }));
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(TemplateDrivenComponent);
